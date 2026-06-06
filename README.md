@@ -319,7 +319,7 @@ Best hyperparameters:
 |----------|----------|
 | `n_estimators` | `200` |
 | `min_samples_split` | `10` |
-| `max_dept` | `None` |
+| `max_depth` | `None` |
 
 ### Model Performance
 
