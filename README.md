@@ -311,8 +311,8 @@ This model still dtruggles to correcly identify closed bussiness. One of the rea
 
 #### Confusion Matrix
 
-| Predicted Not Closed | Predicted Closed |
-|----------|----------|----------|
+| | Predicted Not Closed | Predicted Closed |
+|----------|----------:|----------:|
 | **Actual Not Closed** | 4785 | 221 |
 | **Actual Closed** | 198 | 152 |
 
