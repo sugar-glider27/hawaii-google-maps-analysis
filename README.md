@@ -348,4 +348,5 @@ The baseline model relied only on average rating and review count. However, busi
 - Google Maps information may be outdated or incomplete.
 - Many potentially important predictors, such as revenue, foot traffic, and business age, are not available.
 - The dataset only contains businesses in Hawaii, so results may not generalize to other regions.
+- For the modeling purposes, we defined a cleaning function for the column `category` to retrieve only the first value of the list containing all categories of the location. While this loses some of the original information, this method allows us to keep samples independent of each other and still keep the main information since, one might assume, catehories of a single location should be related.
 
