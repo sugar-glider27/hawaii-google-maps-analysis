@@ -24,6 +24,25 @@ review-Hawaii_10.json.gz
 
 ### Interesting Aggregates
 
+
+## Assessment of Missingness
+
+### NMAR Analysis
+
+
+### Missingness Dependency
+
+
+## Hypothesis Testing
+
+## Problem Identification
+
+## Baseline Model
+
+## Final Model
+
+## Fairness Analysis
+
 ## Project limitations
 We will assume that the current state of locations is correct in the dataset.
 ## Team Members
