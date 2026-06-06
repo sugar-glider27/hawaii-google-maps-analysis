@@ -45,13 +45,34 @@ Relevant columns:
 ### Univariate Analysis
 
 <iframe
-  src="closure-status-dist.html"
+  src="num-reviews-dist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="misc-count-dist.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
 ### Bivariate Analysis
+
+<iframe
+  src="ratings-by-category.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="closure-rate-by-misc.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Interesting Aggregates
 
