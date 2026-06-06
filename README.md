@@ -115,9 +115,9 @@ Testing for the 95% significance level
 ### Results
 We used a permutation test with 1,000 permutations to determine whether the observed difference in average ratings could reasonably occur under the null hypothesis.
 
-Observed Mean rating (closed): 4.1734
-Observed Mean rating (open):   4.3542
-Observed difference:  0.1809
+- Observed Mean rating (closed): 4.1734
+- Observed Mean rating (open):   4.3542
+- Observed difference:  0.1809
 
 P-value: 0.0000
 Conclusion: Reject the Null Hypothesis
@@ -197,8 +197,8 @@ The baseline model relied only on average rating and review count. However, busi
 ## Fairness Analysis
 
 ## Project limitations
-We will assume that the current state of locations is correct in the dataset.
-Google Maps information may be outdated or incomplete.
-Many potentially important predictors, such as revenue, foot traffic, and business age, are not available.
-The dataset only contains businesses in Hawaii, so results may not generalize to other regions.
+- We will assume that the current state of locations is correct in the dataset.
+- Google Maps information may be outdated or incomplete.
+- Many potentially important predictors, such as revenue, foot traffic, and business age, are not available.
+- The dataset only contains businesses in Hawaii, so results may not generalize to other regions.
 
