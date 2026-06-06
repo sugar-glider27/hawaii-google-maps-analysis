@@ -314,7 +314,7 @@ Best hyperparameters:
 
 The final model outperformed the baseline model. Test accuracy increased from 48.4% to 92.2%, while the test F1 score improved from 0.153 to 0.420. This suggests that the engineered features related to review activity, recency, and business characteristics provide valuable information for predicting whether a business is permanently closed.
 
-This model still dtruggles to correcly identify closed bussiness, one of the reason is the lack of important information which could help with predictions such as revenue, foot traffic, and business age. However, the performance is increased compared to the baseline model.
+This model still dtruggles to correcly identify closed bussiness. One of the reason is the lack of important information which could help with predictions such as revenue, foot traffic, and business age. However, the performance is increased compared to the baseline model.
 
 
 ### Why We Expected This Model to Perform Better
