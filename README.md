@@ -5,7 +5,7 @@
 
 
 ## Introduction
-Whenever you are chosing to which restaurant to go, you can search for it on Google maps, and find the one you like. However, many locations open every year and close just as quickly. When they do close, the information is often not updated on Google maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a specified location in permanently closed or not.
+Whenever you are chosing a restaurant to visit, Google Maps can help you compare businesses using ratings, reviews, and other information. However, many locations open every year and close just as quickly. When they do close, the information is often not updated on Google maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a location is permanently closed.
 
 Our project investigates the state column of the Hawaii Google Maps metadata which records the current operational status of each business, ranging from "Open ⋅ Closes 9PM" to "Permanently closed". 
 
@@ -27,6 +27,7 @@ Relevant columns:
 | `num_of_reviews` | Number of reviews |
 | `MISC` | Miscellaneous business information |
 | `state` | Current status of the business (e.g., permanently closed) |
+| `price` | Price tier of the business |
 
 review-Hawaii_10.json.gz
 
@@ -48,6 +49,7 @@ Relevant columns:
 - Created a binary target variable, is_closed, from the business status field
 - Created misc_count, representing the number of miscellaneous business attributes
 - Merged review and business datasets using gmap_id
+- Created additional columns for modeling (refer to the Final Model section below)
 
 ### Univariate Analysis
 
@@ -110,6 +112,16 @@ The absolute difference in mean ratings between permanently closed and non-close
 
 Testing for the 95% significance level
 
+### Results
+We used a permutation test with 1,000 permutations to determine whether the observed difference in average ratings could reasonably occur under the null hypothesis.
+
+Observed Mean rating (closed): 4.1734
+Observed Mean rating (open):   4.3542
+Observed difference:  0.1809
+
+P-value: 0.0000
+Conclusion: Reject the Null Hypothesis
+
 ## Prediction Problem
 ### Prediciton Task
 Predict whether a business is permanently closed
@@ -145,7 +157,7 @@ The final model uses:
 * Review activity features
 * Review trend features
 
-### Raw Features Used in the Model
+### Original Columns Used
 
 | Feature | Source |
 |----------|----------|
