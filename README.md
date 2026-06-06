@@ -284,9 +284,9 @@ Compared to the baseline model, we added several features that capture business 
 Before training, missing values in numerical features were imputed using the median value of the corresponding feature. Missing categorical values were imputed using the most frequent category. The categorical feature `category` was then transformed using one-hot encoding so that it could be used by the Decision Tree model.
 
 We performed a `GridSearchCV` with 5-fold cross-validation hyperparameter search over multiple combinations of:
+- `n_estimators`
 - `max_depth`
 - `min_samples_split`
-- `min_samples_leaf`
 
 The model achieving the highest test-set F1 score was selected as the final model.
 
@@ -294,9 +294,9 @@ Best hyperparameters:
 
  | Hyperparameter | Value |
 |----------|----------|
-| `max_depth` | `None` |
+| `n_estimators` | `200` |
 | `min_samples_split` | `10` |
-| `min_samples_leaf` | `1` |
+| `max_dept` | `None` |
 
 ### Model Performance
 
@@ -307,7 +307,7 @@ Best hyperparameters:
 
 The final model outperformed the baseline model. Test accuracy increased from 48.4% to 92.2%, while the test F1 score improved from 0.153 to 0.420. This suggests that the engineered features related to review activity, recency, and business characteristics provide valuable information for predicting whether a business is permanently closed.
 
-This model still dtruggles to correcly identify closed bussiness. One of the reason is the lack of important information which could help with predictions such as revenue, foot traffic, and business age. However, the performance is increased compared to the baseline model.
+This model still struggles to correcly identify closed bussiness. One of the reason is the lack of important information which could help with predictions such as revenue, foot traffic, and business age. However, the performance is increased compared to the baseline model.
 
 #### Confusion Matrix
 
@@ -343,12 +343,12 @@ The baseline model relied only on average rating and review count. However, busi
 
 **P-value:** < 0.0001
 
-**Conclusion:** At a significance level of 0.05, we reject the null hypothesis. The model performs significantly better on high-review businesses than low-review businesses. Our model relies heavily on review-based features like `days_since_review`, `reviews_last_6_months`, and `mean_review_rating`, which are more informative for businesses with many reviews. For businesses with few reviews, these features are less reliable, leading to weaker predictions. This suggests our model may be less fair toward newer or less popular businesses that have not yet accumulated many reviews.
+**Conclusion:** At a significance level of 0.01, we reject the null hypothesis. The model performs significantly better on high-review businesses than low-review businesses. Our model relies heavily on review-based features like `days_since_review`, `reviews_last_6_months`, and `mean_review_rating`, which are more informative for businesses with many reviews. For businesses with few reviews, these features are less reliable, leading to weaker predictions. This suggests our model may be less fair toward newer or less popular businesses that have not yet accumulated many reviews.
 
 ## Project limitations
 - We will assume that the current state of locations is correct in the dataset.
 - Google Maps information may be outdated or incomplete.
 - Many potentially important predictors, such as revenue, foot traffic, and business age, are not available.
 - The dataset only contains businesses in Hawaii, so results may not generalize to other regions.
-- For the modeling purposes, we defined a cleaning function for the column `category` to retrieve only the first value of the list containing all categories of the location. While this loses some of the original information, this method allows us to keep samples independent of each other and still keep the main information since, one might assume, catehories of a single location should be related.
+- For the modeling purposes, we defined a cleaning function for the column `category` to retrieve only the first value of the list containing all categories of the location. While this reduces the amount of category information available to the model, this method avoids introducing dependence between observations through category expansion and still keep the main information since, one might assume, catehories of a single location should be related.
 
