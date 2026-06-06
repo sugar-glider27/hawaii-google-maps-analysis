@@ -111,12 +111,14 @@ Relevant columns:
 
 ## Assessment of Missingness
 
-<iframe
-  src="missingness-state-avg-rating.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+
+### NMAR Analysis
+
+We believe that `price` may be Not Missing At Random(NMAR) because high-end or more expensive businesses may deliberately choose not to display their price tier on Google Maps because they do not want to scare off potential customers. A business's pricing may also span across multiple tiers making it difficult for the business to be categorized under one price tier. Additionally, lower, budget-friendly businesses may be more likely to display their price tier because the lower prices will make a business much more attractive towards people constrained to a lower budget. So, if based on this logic, we would expect `price` to be missing more often for businesses that are more expensive.
+
+In order to attempt to explain the missingness in 'price', we would like to obtain data about a businesses true pricing. This could be done by looking at menu prices or the typical price of goods a business sells. This would allow us to determine which tier a business should be in and if more expensive businesses tend to have `price` missing.
+
+### Missingness Dependency
 
 We performed two permutation tests to assess whether the missingness of the `state` column 
 depends on other variables in the dataset. 
@@ -131,11 +133,10 @@ missing and businesses where it is not
 - **Significance level:** 0.01
 
 At a significance level of 0.01, we fail to reject the null hypothesis. The missingness of 
-`state` does not appear to depend on `avg_rating` (MCAR with respect to `avg_rating`). 
-Although the p-value of 0.027 would be considered significant at the 0.05 level, it does 
-not meet our stricter threshold of 0.01, meaning we do not have sufficient evidence to 
-conclude that businesses with missing `state` have systematically different average ratings 
-than those with a recorded state.
+`state` does not appear to depend on `avg_rating`. Although the p-value of 0.027 would be 
+considered significant at the 0.05 level, it does not meet our stricter threshold of 0.01. 
+We do not have statistically significant evidence to conclude that businesses with missing 
+`state` have different average ratings than those with a recorded state.
 
 **Test 2: Does missingness of `state` depend on `category`?**
 
@@ -146,21 +147,17 @@ than those with a recorded state.
 - - **Significance level:** 0.01
 
 At a significance level of 0.01, we reject the null hypothesis. The missingness of `state` 
-is strongly dependent on `category` (MAR). The category distribution of businesses with 
-missing `state` is very different from those with a recorded state, indicated by the large 
-TVD of 0.5127. This suggests that certain types of businesses are far more likely to have 
-their state recorded than others — for example, tourist attractions and parks may be more 
-consistently maintained on Google Maps than smaller local businesses like restaurants or 
-clothing stores, which have a higher closure rate as seen in our exploratory analysis.
+is strongly dependent on `category`. The large TVD of 0.5127 indicates that the category 
+distribution with 'missing' State is very different from those with a recorded 'state'. 
+This test suggests that certain types of businesses are more likely to have their state 
+recorded than others.
 
-### NMAR Analysis
-
-We believe that 'price' may be Not Missing At Random(NMAR) because high-end or more expensive businesses may deliberately choose not to display their price tier on Google Maps because they do not want to scare off potential customers. A business's pricing may also span across multiple tiers making it difficult for the business to be categorized under one price tier. Additionally, lower, budget-friendly businesses may be more likely to display their price tier because the lower prices will make a business much more attractive towards people constrained to a lower budget. So, if based on this logic, we would expect 'price' to be missing more often for businesses that are more expensive.
-
-In order to attempt to explain the missingness in 'price', we would like to obtain data about a businesses true pricing. This could be done by looking at menu prices or the typical price of goods a business sells. This would allow us to determine which tier a business should be in and if more expensive businesses tend to have 'price' missing.
-
-### Missingness Dependency
-
+<iframe
+  src="missingness-state-avg-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Hypothesis Testing
 ### Question
@@ -250,13 +247,9 @@ Compared to the baseline model, we added several features that capture business 
 
 | Feature | Source |
 |----------|----------|
-| `avg_rating` | Business dataset |
-| `num_of_reviews` | Business dataset |
-| `category` | Business dataset |
-| `price` | Business dataset |
-| `rating` | Review dataset |
-| `time` | Review dataset |
-| `gmap_id` | Both datasets |
+| `avg_rating` | Meta dataset |
+| `num_of_reviews` | Meta dataset |
+| `category` | Meta dataset |
 
 #### Original Columns Reasons for Inclusion
 
@@ -341,7 +334,7 @@ The baseline model relied only on average rating and review count. However, busi
 
 **P-value:** < 0.0001
 
-**Conclusion:** At a significance level of 0.05, we reject the null hypothesis. The model performs significantly better on high-review businesses than low-review businesses. This is not surprising — our model relies heavily on review-based features like `days_since_review`, `reviews_last_6_months`, and `mean_review_rating`, which are more informative for businesses with many reviews. For businesses with few reviews, these features are less reliable, leading to weaker predictions. This suggests our model may be less fair toward newer or less popular businesses that have not yet accumulated many reviews.
+**Conclusion:** At a significance level of 0.05, we reject the null hypothesis. The model performs significantly better on high-review businesses than low-review businesses. Our model relies heavily on review-based features like `days_since_review`, `reviews_last_6_months`, and `mean_review_rating`, which are more informative for businesses with many reviews. For businesses with few reviews, these features are less reliable, leading to weaker predictions. This suggests our model may be less fair toward newer or less popular businesses that have not yet accumulated many reviews.
 
 ## Project limitations
 - We will assume that the current state of locations is correct in the dataset.
