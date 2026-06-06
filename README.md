@@ -10,11 +10,38 @@ Can we predict whether a Hawaii business listed on Google Maps is permanently cl
 Datasets:
 meta-Hawaii.json.gz
 
-ColumnTypeDescriptionstatestring / NaNOperational status — our target variablecategorylist of stringsBusiness type tags (e.g., ['Restaurant', 'Bar'])avg_ratingfloatAverage star rating (1.0–5.0)num_of_reviewsintTotal number of reviewspricestring / NaNPrice tier: '$' through '$$$$'hourslist / NaNWeekly operating hoursdescriptionstring / NaNBusiness description text
+| Column | Description |
+|---------|-------------|
+| `name` | Name of the business |
+| `address` | Address of the business |
+| `gmap_id` | ID of the business |
+| `description` | Description of the business |
+| `latitude` | Latitude of the business |
+| `longitude` | Longitude of the business |
+| `category` | Category of the business |
+| `avg_rating` | Average rating of the business |
+| `num_of_reviews` | Number of reviews |
+| `price` | Price level of the business |
+| `hours` | Business operating hours |
+| `MISC` | Miscellaneous business information |
+| `state` | Current status of the business (e.g., permanently closed) |
+| `relative_results` | Related businesses recommended by Google |
+| `url` | URL of the business |
 
 
 
 review-Hawaii_10.json.gz
+
+| Column | Description |
+|---------|-------------|
+| `user_id` | ID of the reviewer |
+| `name` | Name of the reviewer |
+| `time` | Time of the review (Unix timestamp) |
+| `rating` | Rating of the business |
+| `text` | Text of the review |
+| `pics` | Pictures attached to the review |
+| `resp` | Business response to the review, including timestamp and response text |
+| `gmap_id` | ID of the business |
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Cleaning steps:
