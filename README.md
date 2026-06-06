@@ -9,7 +9,11 @@ Can we predict whether a Hawaii business listed on Google Maps is permanently cl
 
 Datasets:
 meta-Hawaii.json.gz
-ADD DATA ROWS COLS
+
+ColumnTypeDescriptionstatestring / NaNOperational status — our target variablecategorylist of stringsBusiness type tags (e.g., ['Restaurant', 'Bar'])avg_ratingfloatAverage star rating (1.0–5.0)num_of_reviewsintTotal number of reviewspricestring / NaNPrice tier: '$' through '$$$$'hourslist / NaNWeekly operating hoursdescriptionstring / NaNBusiness description text
+
+
+
 review-Hawaii_10.json.gz
 
 ## Data Cleaning and Exploratory Data Analysis
