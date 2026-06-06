@@ -224,7 +224,7 @@ Because both features are numerical, no categorical encoding was required. Missi
 The baseline model achieved the following performance:
 
 | Model | Train Accuracy | Test Accuracy | Train F1 | Test F1 |
-|---------|---------:|---------:|---------:|---------:|
+|---------|---------|---------|---------|---------|
 | Baseline | 0.486 | 0.484 | 0.159 | 0.153 |
 
 We do not consider this baseline model to be a strong prediction model. In fact, both training and test accuracies are below 50% and the F1 score is very low, indicating that the model does not correctly identify closed businesses.
@@ -301,7 +301,7 @@ Best hyperparameters:
 ### Model Performance
 
 | Model | Train Accuracy | Test Accuracy | Train F1 | Test F1 |
-|---------|---------:|---------:|---------:|---------:|
+|---------|---------|---------|---------|---------|
 | Baseline | 0.486 | 0.484 | 0.159 | 0.153 |
 | Final | 0.973 | 0.922 | 0.828 | 0.420 |
 
@@ -312,7 +312,7 @@ This model still dtruggles to correcly identify closed bussiness. One of the rea
 #### Confusion Matrix
 
 | Predicted Not Closed | Predicted Closed |
-|----------|----------:|----------:|
+|----------|----------|----------|
 | **Actual Not Closed** | 4785 | 221 |
 | **Actual Closed** | 198 | 152 |
 
