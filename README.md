@@ -85,6 +85,23 @@ Relevant columns:
 
 ### Interesting Aggregates
 
+#### Category Summary
+
+| price | num_businesses | closure_rate | avg_rating | median_reviews |
+|-------|---------------|--------------|------------|----------------|
+| $ | 1598 | 8.8% | 4.148 | 117.0 |
+| $$ | 2023 | 10.1% | 4.221 | 188.0 |
+| $$$ | 235 | 11.9% | 4.288 | 148.0 |
+| $$$$ | 114 | 7.0% | 4.425 | 63.0 |
+
+#### Price Summary
+
+| price | num_businesses | closure_rate | avg_rating | median_reviews |
+|-------|---------------|--------------|------------|----------------|
+| $ | 1598 | 8.8% | 4.148 | 117.0 |
+| $$ | 2023 | 10.1% | 4.221 | 188.0 |
+| $$$ | 235 | 11.9% | 4.288 | 148.0 |
+| $$$$ | 114 | 7.0% | 4.425 | 63.0 |
 
 ## Assessment of Missingness
 
