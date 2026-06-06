@@ -87,12 +87,18 @@ Relevant columns:
 
 #### Category Summary
 
-| price | num_businesses | closure_rate | avg_rating | median_reviews |
-|-------|---------------|--------------|------------|----------------|
-| $ | 1598 | 8.8% | 4.148 | 117.0 |
-| $$ | 2023 | 10.1% | 4.221 | 188.0 |
-| $$$ | 235 | 11.9% | 4.288 | 148.0 |
-| $$$$ | 114 | 7.0% | 4.425 | 63.0 |
+| category | closure_rate | avg_rating | median_reviews | total_businesses |
+|----------|-------------|------------|----------------|-----------------|
+| Restaurant | 19.3% | 4.262 | 68.0 | 1416 |
+| Cafe | 15.9% | 4.401 | 63.5 | 384 |
+| Clothing store | 11.8% | 4.373 | 17.0 | 423 |
+| Coffee shop | 9.6% | 4.339 | 88.0 | 354 |
+| Gift shop | 7.9% | 4.375 | 18.0 | 265 |
+| Takeout Restaurant | 6.5% | 4.064 | 66.0 | 278 |
+| Fast food restaurant | 6.2% | 3.895 | 75.0 | 321 |
+| Auto repair shop | 5.0% | 4.383 | 34.0 | 301 |
+| Tourist attraction | 2.6% | 4.515 | 88.0 | 569 |
+| Park | 0.7% | 4.341 | 66.5 | 278 |
 
 #### Price Summary
 
