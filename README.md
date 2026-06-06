@@ -181,6 +181,17 @@ with a Decision Tree classifier.
 
 Because both features are numerical, no categorical encoding was required. Missing values were handled using median imputation before training the model.
 
+### Performance
+
+The baseline model achieved the following performance:
+
+| Model | Train Accuracy | Test Accuracy | Train F1 | Test F1 |
+|---------|---------:|---------:|---------:|---------:|
+| Baseline | 0.486 | 0.484 | 0.159 | 0.153 |
+
+We do not consider this baseline model to be a strong prediction model. In fact, both training and test accuracies are below 50% and the F1 score is very low, indicating that the model does not correctly identify closed businesses.
+This is not surprising because the model relies only on two features: business’s average rating and number of reviews, which do not capture factors such as recent customer activity, changes in review patterns, or characteristics of the business itself. The baseline model serves primarily as a reference point against which more complex models can be compared.
+
 ## Final Model
 
 Our final model is a **Decision Tree Classifier** (Binary Classifier) trained to predict whether a business is permanently closed (`is_closed`).
