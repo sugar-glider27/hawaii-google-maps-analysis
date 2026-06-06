@@ -192,7 +192,7 @@ The model achieving the highest test-set F1 score was selected as the final mode
 
 ### Why We Expected This Model to Perform Better
 
-The baseline model relied only on average rating and review count. However, business closures are often correlated with changes in customer engagement rather than simply low ratings. By incorporating additional feautures, the final model mau indicate whether a business is becoming inactive or losing customers.
+The baseline model relied only on average rating and review count. However, business closures are often correlated with changes in customer engagement rather than simply low ratings. By incorporating additional feautures, the final model may indentify businesses that are becoming inactive or losing customers.
 
 ## Fairness Analysis
 
