@@ -304,7 +304,7 @@ Compared to the baseline model, we added several features that capture business 
 | `has_price` | The completeness of a business listing may reflect how actively the business maintains its online presence. |
 
 ### Preprocessing:
-Before training, missing values in numerical features were imputed using the median value of the corresponding feature. Missing categorical values were imputed using the most frequent category. The categorical feature `category` was then transformed using one-hot encoding so that it could be used by the Decision Tree model.
+Before training, missing values in numerical features were imputed using the median value of the corresponding feature. Missing categorical values were imputed using the most frequent category. The categorical feature `category` was then transformed using one-hot encoding so that it could be used by the Random Forest model.
 
 We performed a `GridSearchCV` with 5-fold cross-validation hyperparameter search over multiple combinations of:
 - `n_estimators`
