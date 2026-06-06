@@ -64,7 +64,7 @@ review_cleaned.head()
 meta_cleaned.head()
 
 <div style="overflow-x: auto;">
-  
+
 | | name | address | gmap_id | latitude | longitude | category | avg_rating | num_of_reviews | price | state | is_closed |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 0 | Hale Pops | Hale Pops, 55-370 Kamehameha Hwy, Laie, HI 96762 | 0x7c00456eecad3111:0x8217f9600c51f33 | 21.637796 | -157.920714 | [Restaurant] | 4.4 | 18 | None | Closed · Opens 11AM | False |
