@@ -190,6 +190,16 @@ We performed a manual hyperparameter search over multiple combinations of:
 
 The model achieving the highest test-set F1 score was selected as the final model.
 
+### Model Performance
+
+| Model | Train Accuracy | Test Accuracy | Train F1 | Test F1 |
+|---------|---------:|---------:|---------:|---------:|
+| Baseline | 0.486 | 0.484 | 0.159 | 0.153 |
+| Final | 0.973 | 0.922 | 0.828 | 0.420 |
+
+The final model outperformed the baseline model. Test accuracy increased from 48.4% to 92.2%, while the test F1 score improved from 0.153 to 0.420. This suggests that the engineered features related to review activity, recency, and business characteristics provide valuable information for predicting whether a business is permanently closed.
+
+
 ### Why We Expected This Model to Perform Better
 
 The baseline model relied only on average rating and review count. However, business closures are often correlated with changes in customer engagement rather than simply low ratings. By incorporating additional feautures, the final model may indentify businesses that are becoming inactive or losing customers.
