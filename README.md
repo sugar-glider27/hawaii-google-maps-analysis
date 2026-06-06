@@ -38,14 +38,16 @@ Relevant columns:
 |---------|-------------|
 | `time` | Time of the review (Unix timestamp) |
 | `rating` | Rating of the business |
-| `resp` | Business response to the review, including timestamp and response text |
 | `gmap_id` | ID of the business |
 
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Cleaning steps:
-- Drop duplicated rows
-- Get timestamps from time
+- Removed duplicate reviews and businesses
+- Converted review timestamps to datetime format
+- Created a binary target variable, is_closed, from the business status field
+- Created misc_count, representing the number of miscellaneous business attributes
+- Merged review and business datasets using gmap_id
 
 ### Univariate Analysis
 
@@ -94,12 +96,78 @@ In order to attempt to explain the missingness in 'price', we would like to obta
 
 
 ## Hypothesis Testing
+### Question
+Do permanently closed businesses have different average ratings than businesses that remain open?
 
-## Problem Identification
+### Null Hypothesis
+The average rating of permanently closed businesses is the same as the average rating of non-closed businesses.
+
+### Alternative Hypothesis
+The average rating of permanently closed businesses is not the same as the average rating of non-closed businesses.
+
+### Test statistic
+The absolute difference in mean ratings between permanently closed and non-closed businesses.
+
+Testing for the 95% significance level
+
+## Prediction Problem
+### Prediciton Task
+Predict whether a business is permanently closed
+
+### Response Variable
+is_closed
+
+This is a binary classification problem because the outcome has two possible values:
+* Closed
+* Not Closed
+
+### Evaluation Metric
+F1 score was used as the primary evaluation metric because business closures are less common than non-closures, making class imbalance an important consideration, and we would like to balance precision and recall. Accuracy was separately considered.
 
 ## Baseline Model
 
+The baseline model uses:
+
+* avg_rating
+* num_of_reviews
+
+with a Decision Tree classifier.
+
 ## Final Model
+
+The final model uses:
+
+* Business characteristics
+* Category information
+* Review activity features
+* Review trend features
+
+Categorical variables are one-hot encoded and numerical features are median-imputed when necessary.
+
+Hyperparameters were selected using a manual parameter search over multiple Decision Tree configurations.
+
+## Raw Features Used in the Model
+
+| Feature | Source |
+|----------|----------|
+| `avg_rating` | Business dataset |
+| `num_of_reviews` | Business dataset |
+| `category` | Business dataset |
+| `price` | Business dataset |
+| `rating` | Review dataset |
+| `time` | Review dataset |
+| `gmap_id` | Both datasets |
+
+## Engineered Features
+
+| Feature | Description |
+|----------|-------------|
+| `reviews_last_6_months` | Number of reviews received in the last six months |
+| `days_since_review` | Number of days since the most recent review |
+| `rating_change` | Difference between the first and most recent review rating |
+| `mean_review_rating` | Mean review rating across all reviews for the business |
+| `has_recent_review` | Indicator for whether the business received at least one review in the last six months |
+| `has_price` | Indicator for whether price information is available |
 
 ## Fairness Analysis
 
