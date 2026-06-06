@@ -7,7 +7,7 @@ Our project investigates the state column of the Hawaii Google Maps metadata whi
 Central Question:
 Can we predict whether a Hawaii business listed on Google Maps is permanently closed, based on features of its organizational profile — its category, price tier, review engagement, rating, and how completely it filled out its listing?
 
-## Datasets
+### Datasets
 meta-Hawaii.json.gz
 
 Number of Rows: 21507
