@@ -177,7 +177,7 @@ with a Decision Tree classifier.
 
 ## Final Model
 
-Our final model is a **Decision Tree Classifier** trained to predict whether a business is permanently closed (`is_closed`).
+Our final model is a **Decision Tree Classifier** (Binary Classifier) trained to predict whether a business is permanently closed (`is_closed`).
 
 
 The final model uses:
