@@ -232,7 +232,7 @@ This is not surprising because the model relies only on two features: businessâ€
 
 ## Final Model
 
-Our final model is a **Decision Tree Classifier** (Binary Classifier) trained to predict whether a business is permanently closed (`is_closed`).
+Our final model is a **RandomForestClassifier** (Binary Classifier) trained to predict whether a business is permanently closed (`is_closed`).
 
 The final model uses:
 
@@ -283,7 +283,7 @@ Compared to the baseline model, we added several features that capture business 
 ### Preprocessing:
 Before training, missing values in numerical features were imputed using the median value of the corresponding feature. Missing categorical values were imputed using the most frequent category. The categorical feature `category` was then transformed using one-hot encoding so that it could be used by the Decision Tree model.
 
-We performed a manual hyperparameter search over multiple combinations of:
+We performed a `GridSearchCV` with 5-fold cross-validation hyperparameter search over multiple combinations of:
 - `max_depth`
 - `min_samples_split`
 - `min_samples_leaf`
@@ -308,6 +308,15 @@ Best hyperparameters:
 The final model outperformed the baseline model. Test accuracy increased from 48.4% to 92.2%, while the test F1 score improved from 0.153 to 0.420. This suggests that the engineered features related to review activity, recency, and business characteristics provide valuable information for predicting whether a business is permanently closed.
 
 This model still dtruggles to correcly identify closed bussiness. One of the reason is the lack of important information which could help with predictions such as revenue, foot traffic, and business age. However, the performance is increased compared to the baseline model.
+
+#### Confusion Matrix
+
+| Predicted Not Closed | Predicted Closed |
+|----------|----------:|----------:|
+| **Actual Not Closed** | 4785 | 221 |
+| **Actual Closed** | 198 | 152 |
+
+The model correctly identified 4,785 businesses that were not closed and 152 businesses that were permanently closed. It incorrectly classified 221 active businesses as closed (false positives) and failed to identify 198 closed businesses (false negatives).
 
 
 ### Why We Expected This Model to Perform Better
