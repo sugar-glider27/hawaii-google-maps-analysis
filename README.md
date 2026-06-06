@@ -170,12 +170,16 @@ F1 score was used as the primary evaluation metric because business closures are
 
 ## Baseline Model
 
-The baseline model uses:
+The baseline model uses two features:
 
-* avg_rating
-* num_of_reviews
+| Feature | Type |
+|----------|----------|
+| `avg_rating` | Quantitative |
+| `num_of_reviews` | Quantitative |
 
 with a Decision Tree classifier.
+
+Because both features are numerical, no categorical encoding was required. Missing values were handled using median imputation before training the model.
 
 ## Final Model
 
