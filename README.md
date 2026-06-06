@@ -13,7 +13,12 @@ meta-Hawaii.json.gz
 Number of Rows: 21507
 
 Relevant columns:
-| Column | Description |
+
+|
+Column 
+|
+Description 
+|
 |---------|-------------|
 | `gmap_id` | ID of the business |
 | `category` | Category of the business |
