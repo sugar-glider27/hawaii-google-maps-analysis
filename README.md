@@ -5,7 +5,7 @@
 
 
 ## Introduction
-Whenever you are chosing a restaurant to visit, Google Maps can help you compare businesses using ratings, reviews, and other information. However, many locations open every year and close just as quickly. When they do close, the information is often not updated on Google maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a location is permanently closed.
+Whenever you are chosing a restaurant to visit, Google Maps can help you compare businesses using ratings, reviews, and other information. However, many locations open every year and close just as quickly. When they do close, the information is not always updated immediately on Google maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a location is permanently closed.
 
 Our project investigates the state column of the Hawaii Google Maps metadata which records the current operational status of each business, ranging from "Open ⋅ Closes 9PM" to "Permanently closed". 
 
