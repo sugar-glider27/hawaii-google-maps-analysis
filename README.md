@@ -297,6 +297,14 @@ We performed a manual hyperparameter search over multiple combinations of:
 
 The model achieving the highest test-set F1 score was selected as the final model.
 
+Best hyperparameters:
+
+ | Hyperparameter | Value |
+|----------|----------|
+| `max_depth` | `None` |
+| `min_samples_split` | `10` |
+| `min_samples_leaf` | `1` |
+
 ### Model Performance
 
 | Model | Train Accuracy | Test Accuracy | Train F1 | Test F1 |
@@ -305,6 +313,8 @@ The model achieving the highest test-set F1 score was selected as the final mode
 | Final | 0.973 | 0.922 | 0.828 | 0.420 |
 
 The final model outperformed the baseline model. Test accuracy increased from 48.4% to 92.2%, while the test F1 score improved from 0.153 to 0.420. This suggests that the engineered features related to review activity, recency, and business characteristics provide valuable information for predicting whether a business is permanently closed.
+
+This model still dtruggles to correcly identify closed bussiness, one of the reason is the lack of important information which could help with predictions such as revenue, foot traffic, and business age. However, the performance is increased compared to the baseline model.
 
 
 ### Why We Expected This Model to Perform Better
