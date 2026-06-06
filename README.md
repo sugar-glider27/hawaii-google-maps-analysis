@@ -9,7 +9,9 @@ Can we predict whether a Hawaii business listed on Google Maps is permanently cl
 
 Datasets:
 meta-Hawaii.json.gz
+
 Number of Rows: 21507
+
 Relevant columns:
 | Column | Description |
 |---------|-------------|
@@ -21,7 +23,9 @@ Relevant columns:
 | `state` | Current status of the business (e.g., permanently closed) |
 
 review-Hawaii_10.json.gz
+
 Number of Rows: 1504347
+
 Relevant columns:
 | Column | Description |
 |---------|-------------|
