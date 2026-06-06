@@ -118,6 +118,41 @@ Relevant columns:
   frameborder="0"
 ></iframe>
 
+We performed two permutation tests to assess whether the missingness of the `state` column 
+depends on other variables in the dataset. 
+
+**Test 1: Does missingness of `state` depend on `avg_rating`?**
+
+- **Test statistic:** absolute difference in mean `avg_rating` between businesses where `state` is 
+missing and businesses where it is not
+- We are testing for the presence of difference and not the direction of difference
+- **Observed statistic:** 0.0192
+- **P-value:** 0.027
+- **Significance level:** 0.01
+
+At a significance level of 0.01, we fail to reject the null hypothesis. The missingness of 
+`state` does not appear to depend on `avg_rating` (MCAR with respect to `avg_rating`). 
+Although the p-value of 0.027 would be considered significant at the 0.05 level, it does 
+not meet our stricter threshold of 0.01, meaning we do not have sufficient evidence to 
+conclude that businesses with missing `state` have systematically different average ratings 
+than those with a recorded state.
+
+**Test 2: Does missingness of `state` depend on `category`?**
+
+- **Test statistic:** TVD
+- We have multiple categories
+- **Observed TVD:** 0.5127
+- **P-value:** < 0.0001
+- - **Significance level:** 0.01
+
+At a significance level of 0.01, we reject the null hypothesis. The missingness of `state` 
+is strongly dependent on `category` (MAR). The category distribution of businesses with 
+missing `state` is very different from those with a recorded state, indicated by the large 
+TVD of 0.5127. This suggests that certain types of businesses are far more likely to have 
+their state recorded than others — for example, tourist attractions and parks may be more 
+consistently maintained on Google Maps than smaller local businesses like restaurants or 
+clothing stores, which have a higher closure rate as seen in our exploratory analysis.
+
 ### NMAR Analysis
 
 We believe that 'price' may be Not Missing At Random(NMAR) because high-end or more expensive businesses may deliberately choose not to display their price tier on Google Maps because they do not want to scare off potential customers. A business's pricing may also span across multiple tiers making it difficult for the business to be categorized under one price tier. Additionally, lower, budget-friendly businesses may be more likely to display their price tier because the lower prices will make a business much more attractive towards people constrained to a lower budget. So, if based on this logic, we would expect 'price' to be missing more often for businesses that are more expensive.
