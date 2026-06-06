@@ -214,6 +214,12 @@ The baseline model uses two features:
 
 with a Decision Tree classifier.
 
+This model contains:
+
+* 2 quantitative features
+* 0 ordinal features
+* 0 nominal features
+
 Because both features are numerical, no categorical encoding was required. Missing values were handled using median imputation before training the model.
 
 ### Performance
@@ -231,13 +237,14 @@ This is not surprising because the model relies only on two features: businessâ€
 
 Our final model is a **Decision Tree Classifier** (Binary Classifier) trained to predict whether a business is permanently closed (`is_closed`).
 
-
 The final model uses:
 
 * Business characteristics
 * Category information
 * Review activity features
 * Review trend features
+
+Compared to the baseline model, we added several features that capture business characteristics and customer engagement patterns over time. These features were chosen because business closures are often associated with declining customer activity rather than simply low ratings.
 
 ### Original Columns Used
 
@@ -251,6 +258,12 @@ The final model uses:
 | `time` | Review dataset |
 | `gmap_id` | Both datasets |
 
+#### Original Columns Reasons for Inclusion
+
+| Feature | Reason for Inclusion |
+|----------|-------------|
+| `category` | Different types of businesses may have different closure rates. For example, restaurants may face different challenges than retail stores or service businesses. |
+
 ### Engineered Features
 
 | Feature | Description |
@@ -261,6 +274,18 @@ The final model uses:
 | `mean_review_rating` | Mean review rating across all reviews for the business |
 | `has_recent_review` | Indicator for whether the business received at least one review in the last six months |
 | `has_price` | Indicator for whether price information is available |
+
+
+#### Engineered Features Reasons for Inclusion
+
+| Feature | Reason for Inclusion |
+|----------|-------------|
+| `reviews_last_6_months` | Businesses that are actively operating are more likely to receive recent reviews, while inactive or struggling businesses may receive fewer recent reviews |
+| `days_since_review` | A long period without reviews may indicate that a business is no longer attracting customers or may have already closed |
+| `rating_change` | Changes in customer satisfaction over time may signal improvements or declines in business performance |
+| `mean_review_rating` | Provides a business-level measure of customer satisfaction based on individual reviews |
+| `has_recent_review` | Indicates whether a business has received any recent customer activity, which may be associated with continued operation |
+| `has_price` | The completeness of a business listing may reflect how actively the business maintains its online presence. |
 
 ### Preprocessing:
 Before training, missing values in numerical features were imputed using the median value of the corresponding feature. Missing categorical values were imputed using the most frequent category. The categorical feature `category` was then transformed using one-hot encoding so that it could be used by the Decision Tree model.
