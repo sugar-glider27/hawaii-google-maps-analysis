@@ -246,7 +246,7 @@ Compared to the baseline model, we added several features that capture business 
 ### Original Columns Used
 
 | Feature | Source |
-|----------|----------|
+|----------|----------:|
 | `avg_rating` | Meta dataset |
 | `num_of_reviews` | Meta dataset |
 | `category` | Meta dataset |
@@ -301,7 +301,7 @@ Best hyperparameters:
 ### Model Performance
 
 | Model | Train Accuracy | Test Accuracy | Train F1 | Test F1 |
-|---------|---------|---------|---------|---------|
+|---------|---------:|---------:|---------:|---------:|
 | Baseline | 0.486 | 0.484 | 0.159 | 0.153 |
 | Final | 0.973 | 0.922 | 0.828 | 0.420 |
 
