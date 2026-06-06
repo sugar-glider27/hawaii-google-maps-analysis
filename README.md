@@ -5,7 +5,7 @@
 
 
 ## Introduction
-Whenever you are choosing a restaurant to visit, Google Maps can help you compare businesses using ratings, reviews, and other information. However, many locations open every year and close just as quickly. When they do close, the information is not always updated immediately on Google maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a location is permanently closed.
+Whenever you are choosing a restaurant to visit, Google Maps can help you compare businesses using ratings, reviews, and other information. However, many locations open every year and close just as quickly. When they do close, the information is not always updated immediately on Google Maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a location is permanently closed.
 
 Our project investigates the state column of the Hawaii Google Maps metadata which records the current operational status of each business, ranging from "Open ⋅ Closes 9PM" to "Permanently closed". 
 
@@ -220,7 +220,15 @@ The average rating of permanently closed businesses is not the same as the avera
 ### Test statistic
 The absolute difference in mean ratings between permanently closed and non-closed businesses.
 
-Testing with an alpha of 0.01.
+This test statistic is appropriate because our question asks whether the two groups differ in their average ratings. We are interested in seeing any difference, regardless of whether closed businesses have higher or lower ratings, so we choose the absolute difference.
+
+### Significance Level
+
+We use a significance level of 0.01.
+This relatively strict threshold reduces the probability of incorrectly concluding that a relationship exists when it is actually due to random chance.
+
+### Method
+We performed a permutation test with 1,000 permutations. Under the null hypothesis, average rating and closure status are unrelated, so the closure labels can be randomly shuffled among businesses without affecting the distribution of ratings.
 
 ### Results
 We used a permutation test with 1,000 permutations to determine whether the observed difference in average ratings could reasonably occur under the null hypothesis.
@@ -230,7 +238,9 @@ We used a permutation test with 1,000 permutations to determine whether the obse
 - Observed difference:  0.1809
 
 P-value: 0.0000
-Conclusion: Reject the Null Hypothesis
+
+### Conclusion
+Because the p-value is smaller than our significance level of 0.01, we reject the null hypothesis. The data provide strong evidence that average ratings differ between permanently closed and non-closed businesses. 
 
 ## Prediction Problem
 ### Prediction Task
