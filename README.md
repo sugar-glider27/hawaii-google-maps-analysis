@@ -1,4 +1,9 @@
 # Hawaii Google Maps Analysis
+## Team Members
+- Marta Krylova
+- Kristen Tran
+
+
 ## Introduction
 Whenever you are chosing to which restaurant to go, you can search for it on Google maps, and find the one you like. However, many locations open every year and close just as quickly. When they do close, the information is often not updated on Google maps, and one might wonder how to predict whether the location is permanently closed or still operating. This project uses a dataset of Hawaii's locations to predict whether a specified location in permanently closed or not.
 
@@ -100,6 +105,4 @@ In order to attempt to explain the missingness in 'price', we would like to obta
 
 ## Project limitations
 We will assume that the current state of locations is correct in the dataset.
-## Team Members
-- Marta Krylova
-- Kristen Tran
+
