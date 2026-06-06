@@ -88,6 +88,13 @@ Relevant columns:
 
 ## Assessment of Missingness
 
+<iframe
+  src="missingness-state-avg-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ### NMAR Analysis
 
 We believe that 'price' may be Not Missing At Random(NMAR) because high-end or more expensive businesses may deliberately choose not to display their price tier on Google Maps because they do not want to scare off potential customers. A business's pricing may also span across multiple tiers making it difficult for the business to be categorized under one price tier. Additionally, lower, budget-friendly businesses may be more likely to display their price tier because the lower prices will make a business much more attractive towards people constrained to a lower budget. So, if based on this logic, we would expect 'price' to be missing more often for businesses that are more expensive.
