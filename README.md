@@ -44,6 +44,12 @@ Relevant columns:
 
 ### Univariate Analysis
 
+<iframe
+  src="closure-status-dist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Bivariate Analysis
 
