@@ -28,6 +28,7 @@ review-Hawaii_10.json.gz
 Number of Rows: 1504347
 
 Relevant columns:
+
 | Column | Description |
 |---------|-------------|
 | `time` | Time of the review (Unix timestamp) |
