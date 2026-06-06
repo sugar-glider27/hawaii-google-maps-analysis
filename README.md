@@ -242,6 +242,26 @@ The baseline model relied only on average rating and review count. However, busi
 
 ## Fairness Analysis
 
+**Group X**: High-review businesses — businesses at or above the median number of reviews
+
+**Group Y**: Low-review businesses — businesses below the median number of reviews
+
+**Evaluation Metric:** F1-score, chosen because our dataset is class-imbalanced (far more open businesses than closed ones), making F1 a more meaningful measure of model performance than accuracy.
+
+**Null Hypothesis:** Our model is fair. Its F1-score for high-review businesses and low-review businesses are roughly the same, and any differences are due to random chance.
+
+**Alternative Hypothesis:** Our model is unfair. Its F1-score for high-review businesses is different from its F1-score for low-review businesses.
+
+**Test Statistic:** Difference in F1-score between high-review and low-review businesses.
+
+**Significance Level:** 0.01
+
+**Observed F1 Difference:** 0.2326
+
+**P-value:** < 0.0001
+
+**Conclusion:** At a significance level of 0.05, we reject the null hypothesis. The model performs significantly better on high-review businesses than low-review businesses. This is not surprising — our model relies heavily on review-based features like `days_since_review`, `reviews_last_6_months`, and `mean_review_rating`, which are more informative for businesses with many reviews. For businesses with few reviews, these features are less reliable, leading to weaker predictions. This suggests our model may be less fair toward newer or less popular businesses that have not yet accumulated many reviews.
+
 ## Project limitations
 - We will assume that the current state of locations is correct in the dataset.
 - Google Maps information may be outdated or incomplete.
