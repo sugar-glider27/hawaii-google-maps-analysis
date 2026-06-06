@@ -316,7 +316,7 @@ This model still dtruggles to correcly identify closed bussiness. One of the rea
 | **Actual Not Closed** | 4785 | 221 |
 | **Actual Closed** | 198 | 152 |
 
-The model correctly identified 4,785 businesses that were not closed and 152 businesses that were permanently closed. It incorrectly classified 221 active businesses as closed (false positives) and failed to identify 198 closed businesses (false negatives).
+The model correctly identified 4,785 businesses that were not closed and 152 businesses that were permanently closed. It incorrectly classified 221 active businesses as closed (false positives) and 198 closed businesses as not closed (false negatives).
 
 
 ### Why We Expected This Model to Perform Better
