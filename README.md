@@ -60,12 +60,21 @@ Relevant columns:
   frameborder="0"
 ></iframe>
 
+This shows the distribution of the number of reviews per business on a log scale. 
+The distribution is extremely right-skewed, so the log scale is necessary here to visualize 
+the full range of the distribution, as the raw counts span several orders of magnitude.
+
 <iframe
   src="misc-count-dist.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+This shows the distribution of the number of MISC attributes per 
+business. The distribution is heavily right-skewed. Very few businesses have more than 30 
+attributes. This suggests that most businesses on Google Maps do not provide additional 
+information about their amenities and services.
 
 ### Bivariate Analysis
 
@@ -76,12 +85,26 @@ Relevant columns:
   frameborder="0"
 ></iframe>
 
+This displays the distribution of average ratings across the top 10 
+business categories, split by closure status. Across nearly all categories, open 
+businesses tend to have slightly higher median ratings than closed businesses. This 
+suggests that lower ratings may be associated with business closure. The rating 
+distributions for open and closed businesses overlap substantially in most categories, 
+indicating that rating alone is not a definitive predictor of closure.
+
 <iframe
   src="closure-rate-by-misc.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+This shows the closure rate for the 15 most common business amenities and attributes. 
+Businesses offering delivery services and those that are good for kids have the highest 
+closure rates at around 9%, while businesses requiring masks and those offering in-store 
+shopping have the lowest closure rates near 0%. This suggests that food-service oriented 
+businesses, which tend to offer delivery and be family-friendly, experience higher turnover 
+rates in Hawaii.
 
 ### Interesting Aggregates
 
