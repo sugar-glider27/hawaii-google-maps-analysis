@@ -393,9 +393,9 @@ The baseline model relied only on average rating and review count. However, busi
 
 **Evaluation Metric:** F1-score, chosen because our dataset is class-imbalanced (far more open businesses than closed ones), making F1 a more meaningful measure of model performance than accuracy.
 
-**Null Hypothesis:** Our model is fair. Its F1-score for high-review businesses and low-review businesses are roughly the same, and any differences are due to random chance.
+**Null Hypothesis:** Its F1-score for high-review businesses and low-review businesses are roughly the same, and any differences are due to random chance (model is fair).
 
-**Alternative Hypothesis:** Our model is unfair. Its F1-score for high-review businesses is different from its F1-score for low-review businesses.
+**Alternative Hypothesis:** Its F1-score for high-review businesses is different from its F1-score for low-review businesses (model is unfair).
 
 **Test Statistic:** Difference in F1-score between high-review and low-review businesses.
 
