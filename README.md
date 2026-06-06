@@ -163,6 +163,8 @@ This is a binary classification problem because the outcome has two possible val
 * Closed
 * Not Closed
 
+We chose this variable as it directly relates to the topic of our anaylis (the closeness of locations).
+
 ### Evaluation Metric
 F1 score was used as the primary evaluation metric because business closures are less common than non-closures, making class imbalance an important consideration, and we would like to balance precision and recall. Accuracy was separately considered.
 
