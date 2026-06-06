@@ -9,7 +9,8 @@ Can we predict whether a Hawaii business listed on Google Maps is permanently cl
 
 Datasets:
 meta-Hawaii.json.gz
-
+Number of Rows: 21507
+Relevant columns:
 | Column | Description |
 |---------|-------------|
 | `gmap_id` | ID of the business |
@@ -19,10 +20,9 @@ meta-Hawaii.json.gz
 | `MISC` | Miscellaneous business information |
 | `state` | Current status of the business (e.g., permanently closed) |
 
-Number of Rows: 21507
-
 review-Hawaii_10.json.gz
-
+Number of Rows: 1504347
+Relevant columns:
 | Column | Description |
 |---------|-------------|
 | `time` | Time of the review (Unix timestamp) |
@@ -30,7 +30,6 @@ review-Hawaii_10.json.gz
 | `resp` | Business response to the review, including timestamp and response text |
 | `gmap_id` | ID of the business |
 
-Number of Rows: 1504347
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Cleaning steps:
