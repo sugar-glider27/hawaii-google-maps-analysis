@@ -64,7 +64,7 @@ review_cleaned.head()
 meta_cleaned.head()
 
 <iframe
-  src="assets/meta-head.html"
+  src="meta-head.html"
   width="100%"
   height="270"
   frameborder="0"
