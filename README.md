@@ -164,10 +164,10 @@ We do not have statistically significant evidence to conclude that businesses wi
 **Test 2: Does missingness of `state` depend on `category`?**
 
 - **Test statistic:** TVD
-- We have multiple categories
+-   This test statistic was chosen since we have multiple categories
 - **Observed TVD:** 0.5127
 - **P-value:** < 0.0001
-- - **Significance level:** 0.01
+- **Significance level:** 0.01
 
 At a significance level of 0.01, we reject the null hypothesis. The missingness of `state` 
 is strongly dependent on `category`. The large TVD of 0.5127 indicates that the category 
@@ -311,7 +311,7 @@ We performed a `GridSearchCV` with 5-fold cross-validation hyperparameter search
 - `max_depth`
 - `min_samples_split`
 
-The model achieving the highest test-set F1 score was selected as the final model.
+The model achieving the highest mean cross-validation F1 was selected as the final model.
 
 Best hyperparameters:
 
