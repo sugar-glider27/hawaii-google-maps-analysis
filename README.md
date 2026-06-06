@@ -198,4 +198,7 @@ The baseline model relied only on average rating and review count. However, busi
 
 ## Project limitations
 We will assume that the current state of locations is correct in the dataset.
+Google Maps information may be outdated or incomplete.
+Many potentially important predictors, such as revenue, foot traffic, and business age, are not available.
+The dataset only contains businesses in Hawaii, so results may not generalize to other regions.
 
