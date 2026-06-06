@@ -63,12 +63,13 @@ review_cleaned.head()
 
 meta_cleaned.head()
 
-<iframe
-  src="meta-head.html"
-  width="100%"
-  height="270"
-  frameborder="0"
-></iframe>
+| | name | address | gmap_id | latitude | longitude | category | avg_rating | num_of_reviews | price | state | is_closed |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | Hale Pops | Hale Pops, 55-370 Kamehameha Hwy, Laie, HI 96762 | 0x7c00456eecad3111:0x8217f9600c51f33 | 21.637796 | -157.920714 | [Restaurant] | 4.4 | 18 | None | Closed · Opens 11AM | False |
+| 1 | SMP - Single Marine Program | SMP - Single Marine Program, G St, Kailua, HI | 0x7c00159b5b1b1d25:0x8d2d85d4a758290e | 21.440345 | -157.754347 | [Recreation center] | 4.1 | 18 | None | Opens soon · 8AM | False |
+| 2 | 2 Cheesy Guys | 2 Cheesy Guys, 1486 HI-30, Wailuku, HI 96793 | 0x7954d376a8b12db3:0xa51dd57e1cc14ca9 | 20.853014 | -156.503671 | [Food court] | 5.0 | 6 | None | Closed · Opens 11AM Fri | False |
+| 3 | Kraken Coffee Kahului | Kraken Coffee Kahului, 520 Keolani Pl, Kahului | 0x7954d370921ff6bd:0x3193ba783e26d032 | 20.888238 | -156.450614 | [Coffee shop] | 4.8 | 8 | \$ | Open · Closes 7PM | False |
+| 4 | Akasatana Ramen Kyoto | Akasatana Ramen Kyoto, 1450 Ala Moana Blvd, Ho... | 0x7c006df045b01715:0xe945c308688e1a46 | 21.290463 | -157.843730 | [Ramen restaurant] | 5.0 | 1 | None | Closed · Opens 11AM | False |
 
 ### Univariate Analysis
 
