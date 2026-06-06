@@ -135,6 +135,9 @@ with a Decision Tree classifier.
 
 ## Final Model
 
+Our final model is a **Decision Tree Classifier** trained to predict whether a business is permanently closed (`is_closed`).
+
+
 The final model uses:
 
 * Business characteristics
@@ -142,11 +145,7 @@ The final model uses:
 * Review activity features
 * Review trend features
 
-Categorical variables are one-hot encoded and numerical features are median-imputed when necessary.
-
-Hyperparameters were selected using a manual parameter search over multiple Decision Tree configurations.
-
-## Raw Features Used in the Model
+### Raw Features Used in the Model
 
 | Feature | Source |
 |----------|----------|
@@ -158,7 +157,7 @@ Hyperparameters were selected using a manual parameter search over multiple Deci
 | `time` | Review dataset |
 | `gmap_id` | Both datasets |
 
-## Engineered Features
+### Engineered Features
 
 | Feature | Description |
 |----------|-------------|
@@ -168,6 +167,20 @@ Hyperparameters were selected using a manual parameter search over multiple Deci
 | `mean_review_rating` | Mean review rating across all reviews for the business |
 | `has_recent_review` | Indicator for whether the business received at least one review in the last six months |
 | `has_price` | Indicator for whether price information is available |
+
+### Preprocessing:
+Before training, missing values in numerical features were imputed using the median value of the corresponding feature. Missing categorical values were imputed using the most frequent category. The categorical feature `category` was then transformed using one-hot encoding so that it could be used by the Decision Tree model.
+
+We performed a manual hyperparameter search over multiple combinations of:
+- `max_depth`
+- `min_samples_split`
+- `min_samples_leaf`
+
+The model achieving the highest test-set F1 score was selected as the final model.
+
+### Why We Expected This Model to Perform Better
+
+The baseline model relied only on average rating and review count. However, business closures are often correlated with changes in customer engagement rather than simply low ratings. By incorporating additional feautures, the final model mau indicate whether a business is becoming inactive or losing customers.
 
 ## Fairness Analysis
 
