@@ -110,7 +110,7 @@ The average rating of permanently closed businesses is not the same as the avera
 ### Test statistic
 The absolute difference in mean ratings between permanently closed and non-closed businesses.
 
-Testing for the 95% significance level
+Testing with an alpha of 0.01.
 
 ### Results
 We used a permutation test with 1,000 permutations to determine whether the observed difference in average ratings could reasonably occur under the null hypothesis.
